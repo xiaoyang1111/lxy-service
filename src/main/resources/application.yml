@@ -14,21 +14,21 @@ spring:
           maxWait: 60000
           minEvictableIdleTimeMillis: 300000
           minIdle: 5
-          password: Shida_test
           poolPreparedStatements: true
           testOnBorrow: false
           testOnReturn: false
           testWhileIdle: true
           timeBetweenEvictionRunsMillis: 60000
           type: com.alibaba.druid.pool.DruidDataSource
-          url: jdbc:mysql://rm-wz97m2eb07ko0r848bo.mysql.rds.aliyuncs.com:3306/sd_test_im?useSSL=false&characterEncodin:UTF-8
-          username: shida_test
+          url: jdbc:mysql://47.106.134.251:3306/sd_test_im?useSSL=false&characterEncodin:UTF-8
+          username: root
+          password: 123456
           validationQuery: SELECT 1 FROM DUAL
 ## Redis 配置
 ## Redis数据库索引（默认为0）
   redis:
     database: 0
-    host: 127.0.0.1
+    host: 47.106.134.251
     port: 6379
     password:   # Redis服务器连接密码（默认为空）
     # pool:
