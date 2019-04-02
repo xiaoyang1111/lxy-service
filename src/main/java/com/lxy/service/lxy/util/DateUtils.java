@@ -1,4 +1,4 @@
-package com.lxy.service.lxy.config;
+package com.lxy.service.lxy.util;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 

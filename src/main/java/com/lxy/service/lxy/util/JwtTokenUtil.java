@@ -1,4 +1,4 @@
-package com.lxy.service.lxy.config;
+package com.lxy.service.lxy.util;
 
 import com.alibaba.fastjson.JSONObject;
 import io.jsonwebtoken.Claims;
