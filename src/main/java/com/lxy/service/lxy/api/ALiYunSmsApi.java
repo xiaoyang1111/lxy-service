@@ -1,6 +1,6 @@
 package com.lxy.service.lxy.api;
 
-import com.lxy.service.lxy.entity.HostType;
+import com.lxy.service.lxy.entity.domain.HostType;
 import com.lxy.service.lxy.util.CommonUtil;
 import com.lxy.service.lxy.util.HttpUtil;
 import org.springframework.stereotype.Service;

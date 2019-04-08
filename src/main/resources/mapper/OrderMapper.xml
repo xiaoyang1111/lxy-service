@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxy.service.lxy.mapper.OrderMapper">
+    <sql id="orderColumns">
+      a.id AS id,
+      a.order_num AS  orderNum,
+      a.user_id AS userId,
+      a.user_name AS  userName,
+      a.address_detail AS addressDetail,
+      a.phone as phone,
+      a.work_type AS workType,
+      a.order_status AS orderStatus,
+      a.create_time AS createTime,
+      a.update_time AS updateTime,
+      a.is_del AS  isDel
+    </sql>
+    <select id="get" resultType="com.lxy.service.lxy.entity.domain.Order">
+        SELECT  <include refid="orderColumns"/>  FROM  order a
+        <where>
+            a.is_del =0
+            <if test="id !=null and id !=''">
+                AND  a.id = #{id}
+            </if>
+        </where>
+    </select>
+    <select id="getOrderByUserId" resultType="com.lxy.service.lxy.entity.domain.Order">
+        SELECT  <include refid="orderColumns"/>  FROM  order a
+        <where>
+            a.is_del =0
+            <if test="id !=null and id !=''">
+                AND  a.user_id = #{userId}
+            </if>
+        </where>
+    </select>
+    <insert id="insert" parameterType="com.lxy.service.lxy.entity.domain.Order">
+        INSERT  INTO order
+        (id,order_num,user_id,user_name,address_detail,phone,work_type,order_status,create_time,create_time,is_del) VALUES
+        (#{id},#{orderNum},#{user_id},#{user_name},#{address_detail},#{phone},#{work_type},#{order_status},#{create_time},#{create_time},#{isDel})
+    </insert>
+    <update id="update">
+        update order
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userId !=null and userId!=''"> user_id =#{userId}</if>
+            <if test="orderNum !=null and orderNum!=''"> order_num =#{orderNum}</if>
+            <if test="userName !=null and userName!=''"> user_name =#{userName}</if>
+            <if test="addressDetail !=null and addressDetail!=''"> address_detail =#{addressDetail}</if>
+            <if test="phone !=null and phone!=''"> phone =#{phone}</if>
+            <if test="workType !=null "> work_type =#{workType}</if>
+            <if test="orderStatus !=null "> order_status =#{orderStatus}</if>
+            <if test="createTime !=null"> create_time =#{createTime}</if>
+            <if test="updateTime !=null"> update_time =#{updateTime}</if>
+            <if test="isDel !=null"> is_del =#{isDel}</if>
+        </trim>
+    </update>
+</mapper>

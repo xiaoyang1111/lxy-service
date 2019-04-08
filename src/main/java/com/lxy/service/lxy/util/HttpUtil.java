@@ -1,6 +1,6 @@
 package com.lxy.service.lxy.util;
 
-import com.lxy.service.lxy.entity.HostType;
+import com.lxy.service.lxy.entity.domain.HostType;
 
 import javax.net.ssl.*;
 import java.io.ByteArrayOutputStream;

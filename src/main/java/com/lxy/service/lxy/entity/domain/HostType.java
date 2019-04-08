@@ -1,4 +1,4 @@
-package com.lxy.service.lxy.entity;
+package com.lxy.service.lxy.entity.domain;
 
 /**
  * @author lixinyang
