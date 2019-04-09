@@ -64,11 +64,12 @@ public class BaseEntity<T> implements Serializable {
     /**
      * 新增方法
      */
-    public  void InsertPrint(){
+    public  void insertPrint(){
         this.id = GetIdUTIil.getId();
         this.createTime = new Date();
-        updateTime =this.createTime;
+        this.updateTime =this.createTime;
     }
+
     /**
      * 删除标记（0：正常；1：删除）
      */

@@ -4,6 +4,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @author lixinyang
  * @Date
@@ -11,7 +13,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class Order extends BaseEntity<Order> {
+public class OrderResult {
 
     @ApiModelProperty(name="userId",value = "用户id")
     private String userId;
@@ -33,4 +35,10 @@ public class Order extends BaseEntity<Order> {
 
     @ApiModelProperty(name="orderStatus",value = "订单状态")
     private Integer orderStatus;
+
+    @ApiModelProperty(name="createTime",value = "创建时间即下单时间")
+    private Date createTime;
+
+    @ApiModelProperty(name="id",value = "表id")
+    private String  id ;
 }

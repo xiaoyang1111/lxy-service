@@ -32,6 +32,15 @@
             </if>
         </where>
     </select>
+    <select id="getList" resultType="om.lxy.service.lxy.entity.domain.OrderResult">
+        SELECT  <include refid="orderColumns"/> FROM  ORDER a
+        <where>
+            a.is_del = 0
+            <if test="userId != null and userId !=''">
+                a.user_id = #{UserId}
+            </if>
+        </where>
+    </select>
     <insert id="insert" parameterType="com.lxy.service.lxy.entity.domain.Order">
         INSERT  INTO order
         (id,order_num,user_id,user_name,address_detail,phone,work_type,order_status,create_time,create_time,is_del) VALUES
