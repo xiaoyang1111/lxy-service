@@ -1,8 +1,8 @@
 package com.lxy.service.lxy.controller;
 
 import com.lxy.service.lxy.util.RedisUtil;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,18 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date 2019/3/29 0029
  * @Version
  */
-@ApiModel("teatApi")
+@Api(description = "test")
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/testApi")
 public class TestController {
 
     @Autowired
     RedisUtil redisUtil;
-    @ApiModelProperty("测试")
+
+    @ApiOperation("测试")
     @GetMapping("/test/{test}")
     public String test(@PathVariable String test){
-        redisUtil.set("xiaoyang","666");
-        String info = (String)redisUtil.get("xiaoyang");
+        redisUtil.set("test",test);
+        String info  = (String) redisUtil.get("test");
         return info;
     }
 

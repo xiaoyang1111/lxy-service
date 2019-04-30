@@ -19,7 +19,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-//@ConditionalOnProperty(prefix = "tc", name = "swagger-open", havingValue = "true")
 public class SwaggerConfig {
 
     @Bean
@@ -37,7 +36,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("demo")
                 .description("提供对于消息推送操作的相关服务")
-                .termsOfServiceUrl("http://www.tentcoo.com")
+                .termsOfServiceUrl("http://baidi.com")
                 .version("1.0")
                 .build();
     }
